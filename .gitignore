@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.mr-train/
+config/repos.yaml
+*.log

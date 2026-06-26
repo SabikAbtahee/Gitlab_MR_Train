@@ -1,0 +1,30 @@
+name: libA-libB-appA
+reposFile: ../config/repos.example.yaml
+pollSeconds: 60
+
+steps:
+  - id: libA
+    repo: libA
+    mr: 101
+    pack:
+      type: gitlabJob
+      job: pack Minor
+
+  - id: libB
+    repo: libB
+    mr: 202
+    dependsOn: [libA]
+    updatePackages:
+      - from: libA
+    pack:
+      type: gitlabJob
+      job: pack Minor
+
+  - id: appA
+    repo: appA
+    mr: 303
+    dependsOn: [libA, libB]
+    updatePackages:
+      - from: libA
+      - from: libB
+    pack: none

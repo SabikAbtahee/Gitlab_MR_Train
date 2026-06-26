@@ -1,0 +1,24 @@
+repos:
+  libA:
+    name: LibraryA
+    path: ~/projects/lib-a
+    gitlab: https://gitlab.com/acme/lib-a
+    mainBranch: main
+    packageName: "@acme/lib-a"
+    versionPackageJson: lib/package.json
+    dependencyPackageJsons: [package.json, lib/package.json]
+
+  libB:
+    name: LibraryB
+    path: ~/projects/lib-b
+    gitlab: https://gitlab.com/acme/lib-b
+    mainBranch: main
+    packageName: "@acme/lib-b"
+    versionPackageJson: lib/package.json
+    dependencyPackageJsons: [package.json, lib/package.json]
+
+  appA:
+    name: ApplicationA
+    path: ~/projects/app-a
+    gitlab: https://gitlab.com/acme/app-a
+    mainBranch: main
